@@ -5,6 +5,7 @@ import 'package:airplane/ui/pages/getstarted_screen.dart';
 import 'package:airplane/ui/pages/main_screen.dart';
 import 'package:airplane/ui/pages/signup_screen.dart';
 import 'package:airplane/ui/pages/splash_screen.dart';
+import 'package:airplane/ui/pages/success_co_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -19,13 +20,14 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      initialRoute: NavRoute.main.route,
+      initialRoute: NavRoute.successcheckout.route,
       routes: {
-        NavRoute.bonus.route : (context) => const BonusScreen(),
         NavRoute.splash.route : (context) => const SplashScreen(),
         NavRoute.getStart.route : (contex) => const GetStartedScreen(),
         NavRoute.signUp.route : (context) => const SignUpScreen(),
         NavRoute.main.route : (context) => const MainScreen(),
+        NavRoute.bonus.route : (context) => const BonusScreen(),
+        NavRoute.successcheckout.route : (context) => const SuccessCoScreen(),
       },
     );
   }

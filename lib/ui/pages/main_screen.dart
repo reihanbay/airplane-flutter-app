@@ -1,4 +1,5 @@
 import 'package:airplane/styles/theme/theme.dart';
+import 'package:airplane/ui/pages/home_screen.dart';
 import 'package:airplane/ui/widgets/custom_bottomnav_item.dart';
 import 'package:flutter/material.dart';
 
@@ -19,10 +20,10 @@ class MainScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(defRadius),
             color: Theme.of(context).colorScheme.onSecondary
           ),
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              CustomBottomNavItem(imageUrl: 'assets/ic_globe.svg', isSelected: true,),
+              CustomBottomNavItem(imageUrl: 'assets/ic_globe.svg', isSelected: true),
               CustomBottomNavItem(imageUrl: 'assets/ic_book.svg'),
               CustomBottomNavItem(imageUrl: 'assets/ic_credit.svg'),
               CustomBottomNavItem(imageUrl: 'assets/ic_settings.svg'),
@@ -30,10 +31,14 @@ class MainScreen extends StatelessWidget {
           ),
         ));
     }
+
+    Widget content() {
+      return HomeScreen();
+    }
     return Scaffold(
       body: Stack(
         children: [
-          const Text("Main Screen"),
+          content(),
           customBottomNav()
         ],
       ),
